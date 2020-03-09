@@ -1,15 +1,25 @@
 pipeline {
     agent any 
     stages {
-        stage('Start') {
+        stage('Display Environment') {
             steps {
                 sh '''
-                    echo "Displaying Environment:"
                     env | sort
                     pwd
-                    ls -al
                 '''
             }
+        }
+        stage('OpenSuSE Leap) {
+            agent {
+                docker { image 'opensuse/leap:latest' }
+            }
+            steps {
+                sh '''
+                    pwd
+                    cat /etc/os-release
+                '''
+            }
+
         }
     }
 }
