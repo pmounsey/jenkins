@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage ('Start') {
+        stage('Start') {
             sh "Echo Starting"
             sh "pwd"
             sh "ls -al"
