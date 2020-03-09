@@ -1,29 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage {
+        stage ('Start') {
             sh "Echo Starting"
             sh "pwd"
             sh "ls -al"
-        }
-        stage ('Clone Repository') {
-            git changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
-            # git branch: 'dev', changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
-        }
-        stage('Build') { 
-            steps {
-                // 
-            }
-        }
-        stage('Test') { 
-            steps {
-                // 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                // 
-            }
         }
     }
 }
