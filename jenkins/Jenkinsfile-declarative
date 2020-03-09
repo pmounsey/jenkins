@@ -1,7 +1,12 @@
 pipeline {
     agent any 
     stages {
-        stge ('Clone Repository') {
+        stage {
+            sh "Echo Starting"
+            sh "pwd"
+            sh "ls -al"
+        }
+        stage ('Clone Repository') {
             git changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
             # git branch: 'dev', changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
         }
