@@ -1,4 +1,5 @@
 pipeline {
+    cleanWs {}
     agent any 
     stages {
         stage('Display Environment') {
@@ -9,7 +10,7 @@ pipeline {
                 '''
             }
         }
-        stage('OpenSuSE Leap) {
+        stage('OpenSuSE Leap') {
             agent {
                 docker { image 'opensuse/leap:latest' }
             }
