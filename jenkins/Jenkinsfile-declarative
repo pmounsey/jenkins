@@ -3,9 +3,12 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                sh "Echo Starting"
-                sh "pwd"
-                sh "ls -al"
+                sh '''
+                    echo "Displaying Environment:"
+                    env | sort
+                    pwd
+                    ls -al
+                '''
             }
         }
     }
