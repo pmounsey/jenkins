@@ -1,5 +1,5 @@
 pipeline {
-    cleanWs
+    cleanWs()
     agent any 
     stages {
         stage('Display Environment') {
