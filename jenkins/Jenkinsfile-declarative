@@ -1,0 +1,24 @@
+pipeline {
+    agent any 
+    stages {
+        stge ('Clone Repository') {
+            git changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
+            # git branch: 'dev', changelog: false, credentialsId: 'jenkins', poll: false, url: 'git@github.com:pmounsey/jenkins.git'
+        }
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
